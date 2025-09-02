@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Panel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/2f2d9e5e8a.js" crossorigin="anonymous"></script>
+</head>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<body>
+    <!-- Top App Bar -->
+  <header class="topbar">
+    <button class="icon-btn" id="btnMenu" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <h1 class="brand"><span>LALAAA V1</span></h1>
+
+    <button class="icon-btn" aria-label="Akun">
+      <i class="fa-solid fa-user-circle"></i>
+    </button>
+  </header>
+
+  <!-- Drawer (Sidebar) -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-info">
+      <h2>LALAAA V1</h2>
+      <p>Pembuat: <span id="username">Akbar Development</span></p>
+      <p>Title: <span id="role">Junior Developer</span></p>
+    </div>
+
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+
+  <section class="bug-panel">
+    <div class="profile-card">
+      <img src="gambar3.jpg" alt="avatar" class="avatar">
+      <h3 class="username">Lalaaa</h3>
+      <p class="role">Role: Developer • Terbit: 2025-09-02</p>
+    </div>
+
+    <form>
+      <label>Target Number </label>
+      <input type="text" placeholder="62xxxxxxxxxx">
+      
+
+      <label>Select Bug</label>
+      <select>
+        <option>Crash Infinity</option>
+        <option>Delay Invisible</option>
+        <option>IOS Crash</option>
+      </select>
+
+      <button type="button" class="btn-send">
+        <i class="fa-solid fa-bug"></i> SEND BUG
+      </button>
+      <!-- Tempat pesan sukses -->
+<div id="resultMessage" style="margin-top:15px; display:none;"></div>
+    </form>
+  </section>
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a class="bn-item active" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a class="bn-item" href="bug.html">
+      <i class="fa-solid fa-phone"></i>
+      <span>Bug</span>
+    </a>
+    <a class="bn-item" href="#" 
+    onclick="showUnavailable()">
+      <i class="fa-solid fa-bolt"></i>
+      <span>DDoS</span>
+    </a>
+    <a class="bn-item" href="#"
+      onclick="showUnavailable()">
+      <i class="fa-solid fa-wifi"></i>
+      <span>Kill Wifi</span>
+    </a>
+  </nav>
+
+<!-- Modal -->
+<div id="unavailableModal" class="modal">
+  <div class="modal-content">
+    <h2>Fitur Belum Tersedia</h2>
+    <p>Tunggu update selanjutnya!</p>
+    <button onclick="closeModal()">Tutup</button>
+  </div>
+</div>
+
+
+  <script src="app.js"></script>
+  <script>
+  function sendBug() {
+    const target = document.getElementById("target").value;
+    const bug = document.getElementById("bugSelect").value;
+    const result = document.getElementById("resultMessage");
+
+    if (target.trim() === "") {
+      result.style.display = "block";
+      result.style.color = "red";
+      result.innerHTML = "⚠️ Nomor target belum diisi!";
+      return;
+    }
+
+    result.style.display = "block";
+    result.style.color = "lightgreen";
+    result.innerHTML = `
+      <strong>✅ Bug berhasil dikirim</strong><br>
+      <small>Bug berhasil dikirim ke <b>${target}</b> dengan <b>${bug}</b></small>
+    `;
+  }
+</script>
+</body>
+</html>
