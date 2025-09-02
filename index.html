@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Lalaa V1</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top App Bar -->
+  <header class="topbar">
+    <button class="icon-btn" id="btnMenu" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <h1 class="brand"><span>LALAAA</span>
+     V1</h1>
+
+    <button class="icon-btn" aria-label="Akun">
+      <i class="fa-solid fa-user-circle"></i>
+    </button>
+  </header>
+
+  <!-- Drawer (Sidebar) -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-info">
+      <h2>LALAAA V1</h2>
+      <p>Pembuat: <span id="username">Akbar Development</span></p>
+      <p>Title: <span id="role">Junior Developer</span></p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- Content -->
+  <main class="container">
+
+    <!-- Hero Card -->
+    <section class="card hero">
+      <img
+        src="demo.jpg"
+        alt="Server room"
+        class="hero-img"
+      />
+      <div class="hero-overlay">
+      </div>
+    </section>
+
+    <!-- Navbar -->
+    <section class="quick-actions">
+      <a href="#" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="qa-text">DDoS</span>
+      </a>
+      <a href="bug.html" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="qa-text">Star Bug</span>
+      </a>
+      <a href="#" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-comments"></i></span>
+        <span class="qa-text">Live Chat</span>
+      </a>
+      <a href="#" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-gear"></i></span>
+        <span class="qa-text">Account</span>
+      </a>
+    </section>
+
+    <!-- Telegram Banner -->
+    <a href="https://wa.me/6285774979608" class="banner">
+      <div class="banner-left">
+        <div class="banner-avatar"><i class="fa-brands fa-whatsapp"></i></div>
+      </div>
+      <div class="banner-body">
+        <div class="banner-title">Kontak Whatsapp: Team Support Akbar Development</div>
+      </div>
+      <div class="banner-right"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+
+    <!-- Server Stats -->
+    <section class="card stats">
+      <div class="stats-head">
+        <i class="fa-solid fa-chart-column"></i>
+        <h3>Server Stats</h3>
+      </div>
+      <div class="divider"></div>
+
+      <div class="stat-row">
+        <div class="stat-left">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Online Users</span>
+        </div>
+        <div class="stat-right" id="onlineUsers">4</div>
+      </div>
+
+      <div class="divider thin"></div>
+
+      <div class="stat-row">
+        <div class="stat-left">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Active Sender</span>
+        </div>
+        <div class="stat-right" id="activeSender">2</div>
+      </div>
+    </section>
+
+    <div class="spacer-96"></div>
+  </main>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a class="bn-item active" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a class="bn-item" href="bug.html">
+      <i class="fa-solid fa-phone"></i>
+      <span>Bug</span>
+    </a>
+    <a class="bn-item" href="#" 
+    onclick="showUnavailable()">
+      <i class="fa-solid fa-bolt"></i>
+      <span>DDoS</span>
+    </a>
+    <a class="bn-item" href="#"
+      onclick="showUnavailable()">
+      <i class="fa-solid fa-wifi"></i>
+      <span>Kill Wifi</span>
+    </a>
+  </nav>
+
+<!-- Modal -->
+<div id="unavailableModal" class="modal">
+  <div class="modal-content">
+    <h2>Fitur Belum Tersedia</h2>
+    <p>Tunggu update selanjutnya!</p>
+    <button onclick="closeModal()">Tutup</button>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
