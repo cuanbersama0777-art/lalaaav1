@@ -1,0 +1,299 @@
+:root{
+  --bg: #0d0a12;
+  --elev-1: #151020;
+  --elev-2: #1c142b;
+  --text: #eae6f7;
+  --muted: #a999c5;
+  --accent-1: #a855f7;
+  --accent-2: #7c3aed;
+  --shadow-soft: 0 8px 30px rgba(0,0,0,.45);
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin:0;
+  background: #0d0a12;
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+/* Topbar */
+.topbar{
+  height:64px;
+  padding:0 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position: sticky;
+  top:0;
+  z-index: 20;
+  background: #151020;
+  color:white;
+}
+.brand{
+  margin:0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight:800;
+  font-size: 22px;
+}
+.icon-btn{
+  background: transparent;
+  border: none;
+  color: white;
+  width:40px; height:40px;
+  display:grid; place-items:center;
+}
+
+/* Drawer */
+.drawer{
+  position: fixed; inset: 0 auto 0 0;
+  width: 80%;
+  max-width: 300px;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  background: #120c1d;
+  z-index: 30;
+}
+.drawer.open{ transform: translateX(0); }
+.scrim{
+  position: fixed; inset:0;
+  background: rgba(0,0,0,.4);
+  opacity:0; pointer-events:none; transition: opacity .2s;
+  z-index: 25;
+}
+.scrim.show{ opacity:1; pointer-events:auto; }
+
+.drawer-info {
+  padding: 28px 20px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+}
+.drawer-info h2 {
+  margin: 0 0 12px;
+  font-family: Orbitron, sans-serif;
+  font-size: 22px;
+}
+.drawer-info p {
+  margin: 6px 0;
+  font-family: monospace;
+  font-size: 15px;
+}
+.drawer-info span { font-weight: bold; }
+
+.drawer-nav{ padding:8px; }
+.drawer-link{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 14px;
+  margin:6px 0;
+  border-radius:14px;
+  color: var(--text); text-decoration:none;
+}
+.drawer-link i{ width:20px; text-align:center; }
+
+/* Konten lain (hero, card, stats dll) sama seperti sebelumnya */
+.container{ padding:16px; }
+.card{ background:#1c142b; border-radius:16px; margin-bottom:16px; }
+.hero{ position:relative; overflow:hidden; }
+.hero-img {
+  width: 100%;
+  height: 200px; /* default kemarin */
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0; /* biar teks nempel bawah */
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 80%);
+}
+
+/* Quick Actions */
+.quick-actions{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:16px 0; }
+.qa-btn{ text-align:center; color:white; text-decoration:none; }
+.qa-icon{ width:60px; height:60px; border-radius:50%; background:#2a1c40; display:grid; place-items:center; margin:0 auto; }
+
+.qa-text{
+  display:block;
+  margin-top:6px;
+  font-size:10px;
+  font-family: Orbitron, sans-serif; /* ganti font jadi futuristik */
+  letter-spacing: 0.5px;
+}
+
+/* Banner */
+.banner{ display:flex; align-items:center; gap:12px; background:linear-gradient(135deg,#7c3aed,#a855f7); padding:12px; border-radius:16px; text-decoration:none; color:white; margin:16px 0; }
+.banner-avatar{ width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.2); display:grid; place-items:center; }
+
+/* Stats */
+.stats{ padding:16px; }
+.stats-head{ display:flex; align-items:center; gap:8px; font-weight:bold; }
+.stat-row{ display:flex; justify-content:space-between; margin:10px 0; }
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0c0c0c;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  border-top: 1px solid #222;
+}
+
+.bn-item {
+  flex: 1;
+  text-align: center;
+  color: #888;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bn-item i {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.bn-item.active {
+  color: #a855f7; /* ungu aktif */
+  font-weight: 600;
+}
+
+.bug-panel {
+  padding: 20px;
+}
+
+.profile-card {
+  text-align: center;
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(124,58,237,.5);
+}
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.username {
+  margin: 12px 0 6px;
+  font-size: 20px;
+  color: #fff;
+  font-family: Orbitron, sans-serif;
+}
+
+h1, h2, h3, .title {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+input, select {
+  font-family: 'default', sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #a020f0;
+  background: #111;
+  color: #fff;
+}
+
+.btn-send {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Welcome Banner */
+.welcome {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #4cafef, #6a5af9);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.welcome-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.welcome-text {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+/* Running Text */
+.announce {
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  border: 1px solid #111;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.scroll-container {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-text {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  color: #333;
+  animation: scroll-left 12s linear infinite;
+}
+
+/* Animasi scroll */
+@keyframes scroll-left {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Section order dengan background */
+.order-section {
+  text-align: center;
+  padding: 16px;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  color: #fff;
+}
+
+.order-section p {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+/* Tombol order */
+.order-btn {
+  display: inline-block;
+  background: linear-gradient(135deg,#7c3aed,#a855f7); /* warna Telegram */
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.order-btn:hover {
+  background: #7c3aed;
+  transform: scale(1.05);
+}
