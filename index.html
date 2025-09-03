@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Lalaa V1</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top App Bar -->
+  <header class="topbar">
+    <button class="icon-btn" id="btnMenu" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <h1 class="brand"><span>LALAAA</span>
+     v1</h1>
+
+    <button class="icon-btn" aria-label="Akun">
+      <i class="fa-solid fa-user-circle"></i>
+    </button>
+  </header>
+
+  <!-- Drawer (Sidebar) -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-info">
+      <h2>LALAAA V1</h2>
+      <p>Owner: <span id="username">Akbar Development</span></p>
+      <p>Title: <span id="role">Junior Developer</span></p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- Content -->
+  <main class="container">
+
+    <!-- Hero Card -->
+    <section class="card hero">
+      <img
+        src="home.jpg"
+        alt="Server room"
+        class="hero-img"
+      />
+      <div class="hero-overlay">
+      </div>
+    </section>
+
+    <!-- Navbar -->
+    <section class="quick-actions">
+      <a href="tiktok.html" class="qa-btn">
+        <span class="qa-icon"><i class="fa-brands fa-tiktok"></i></span>
+        <span class="qa-text">TIKTOK</span>
+      </a>
+      <a href="audio.html" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-music"></i></span>
+        <span class="qa-text">AUDIO</span>
+      </a>
+      <a href="sticker.html" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+        <span class="qa-text">STICKER</span>
+      </a>
+      <a href="cuaca.html" class="qa-btn">
+        <span class="qa-icon"><i class="fa-solid fa-cloud"></i></span>
+        <span class="qa-text">CUACA</span>
+      </a>
+    </section>
+
+    <!-- Telegram Banner -->
+    <a href="https://wa.me/6285774979608" class="banner">
+      <div class="banner-left">
+        <div class="banner-avatar"><i class="fa-brands fa-whatsapp"></i></div>
+      </div>
+      <div class="banner-body">
+        <div class="banner-title">Kontak Whatsapp: Team Support Akbar Development</div>
+      </div>
+      <div class="banner-right"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  
+  <!-- Tambahan teks statis -->
+  <div class="order-section">
+    <p>Kami juga menerima jasa pembuatan & pengelolaan bot. Seperti Jasband, Jasunband, Jasbug, Jasher, Botgc, Dll!</p>
+    <a href="https://t.me/lalabotreal" target="_blank" class="order-btn">
+      <i class="fa-brands fa-telegram"></i> Order via Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Pilih Plan -->
+<section class="plan-section card">
+  <h2><i class="fa-solid fa-box"></i> PILIH PLAN</h2>
+  <div class="plan-list">
+    
+    <div class="plan-card">
+      <h3>DPR 1</h3>
+      <p>Kontrak: <b>20 hari</b></p>
+      <p>Pendapatan harian: <span class="highlight">Rp 10.000</span></p>
+      <p>Total pendapatan: <span class="highlight">Rp 200.000</span></p>
+      <p>Persyaratan: Wajib ganteng wkwk</p>
+      <div class="harga"> Rp 100.000</div>
+      <button class="btn-beli">Beli</button>
+    </div>
+
+<div class="plan-card">
+      <h3>DPR 2</h3>
+      <p>Kontrak: <b>20 hari</b></p>
+      <p>Pendapatan harian: <span class="highlight">Rp 60.000</span></p>
+      <p>Total pendapatan: <span class="highlight">Rp 1.200.000</span></p>
+      <p>Persyaratan: Jenny bikin daget</p>
+      <div class="harga"> Rp 600.000</div>
+      <button class="btn-beli">Beli</button>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a class="bn-item active" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a class="bn-item" href="tiktok.html">
+      <i class="fa-brands fa-tiktok"></i>
+      <span>TIKTOK</span>
+    </a>
+    <a class="bn-item" href="audio.html">
+      <i class="fa-solid fa-music"></i>
+      <span>AUDIO</span>
+    </a>
+    <a class="bn-item" href="about.html">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>ABOUT</span>
+    </a>
+  </nav>
+  
+  <script src="app.js"></script>
+</body>
+</html>
