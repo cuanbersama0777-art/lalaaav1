@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LALAAA BOT Audio</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+<style>
+.audio-container {
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.audio-container input#audio-title {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #a020f0;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.audio-container .btn-send {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.audio-container .btn-send:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.instructions {
+  width: 100%;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+  <button class="icon-btn" id="btnMenu"><i class="fa-solid fa-bars"></i></button>
+  <h1 class="brand"><span>LALAAA</span> V1</h1>
+  <button class="icon-btn"><i class="fa-solid fa-user-circle"></i></button>
+</header>
+
+<!-- Drawer & Scrim -->
+<aside class="drawer" id="drawer">
+  <div class="drawer-info">
+    <h2>LALAAA V1</h2>
+    <p>Pembuat: <span id="username">Akbar Development</span></p>
+    <p>Title: <span id="role">Junior Developer</span></p>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<main class="container">
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <img src="audio3.jpg" alt="Profil Akbar" class="avatar">
+    <h3 class="username">Youtube Mp3</h3>
+    <p>Download Audio Mp3 Dari Youtube Secara Otomatis!</p>
+  </div>
+
+  <!-- Langkah-langkah -->
+  <div class="audio-container">
+    <div class="instructions">
+      <strong>Langkah-langkah:</strong>
+      <ol>
+        <li>Masukkan judul lagu yang ingin didownload.</li>
+        <li>Klik tombol <strong>Kirim ke WhatsApp</strong>.</li>
+        <li>Buka WhatsApp jika diminta untuk mengirim ke WhatsApp.</li>
+      </ol>
+    </div>
+
+    <!-- Form Audio -->
+    <input type="text" id="audio-title" placeholder="Masukkan judul lagu">
+    <button id="send-btn" class="btn-send"><i class="fa-solid fa-paper-plane"></i> Kirim ke WhatsApp</button>
+  </div>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a class="bn-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a class="bn-item" href="tiktok.html"><i class="fa-brands fa-tiktok"></i><span>TIKTOK</span></a>
+  <a class="bn-item active" href="audio.html"><i class="fa-solid fa-music"></i><span>AUDIO</span></a>
+  <a class="bn-item" href="about.html"><i class="fa-solid fa-circle-info"></i><span>ABOUT</span></a>
+</nav>
+
+<script>
+// Drawer
+const btnMenu = document.getElementById('btnMenu');
+const drawer = document.getElementById('drawer');
+const scrim = document.getElementById('scrim');
+btnMenu.addEventListener('click', ()=>{
+  drawer.classList.add('open');
+  scrim.classList.add('show');
+});
+scrim.addEventListener('click', ()=>{
+  drawer.classList.remove('open');
+  scrim.classList.remove('show');
+});
+
+// Kirim Audio ke WhatsApp Bot
+const botNumber = "6285774979608";
+document.getElementById('send-btn').addEventListener('click', ()=>{
+  const title = document.getElementById('audio-title').value.trim();
+  if(!title){ alert("Tolong masukkan judul lagu!"); return; }
+  const botCommand = `.play ${title}`;
+  const encodedMessage = encodeURIComponent(botCommand);
+  const waLink = `https://wa.me/${botNumber}?text=${encodedMessage}`;
+  window.open(waLink, "_blank");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LALAAA BOT About</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+<style>
+.about-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-container h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #a855f7;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.about-container p, .about-container ul {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+}
+.about-container ul {
+  padding-left: 20px;
+}
+.contact-section {
+  margin-top: 20px;
+  padding: 16px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+}
+.contact-section a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff;
+  color: #7c3aed;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-section a:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.spacer-bottom {
+  height: 80px; /* ruang agar konten tidak ketutup bottom nav */
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+  <button class="icon-btn" id="btnMenu"><i class="fa-solid fa-bars"></i></button>
+  <h1 class="brand"><span>LALAAA</span> V1</h1>
+  <button class="icon-btn"><i class="fa-solid fa-user-circle"></i></button>
+</header>
+
+<!-- Drawer & Scrim -->
+<aside class="drawer" id="drawer">
+  <div class="drawer-info">
+    <h2>LALAAA V1</h2>
+    <p>Pembuat: <span id="username">Akbar Development</span></p>
+    <p>Title: <span id="role">Junior Developer</span></p>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<main class="container">
+
+  <!-- Hero Card -->
+  <section class="card hero">
+    <img src="about1.jpg" alt="About Hero" class="hero-img">
+    <div class="hero-overlay"></div>
+  </section>
+
+  <!-- About Content -->
+  <div class="about-container">
+    <h2>About Us</h2>
+    <p>Selamat datang di <strong>LALAAA BOT</strong>! Website ini mempermudah pengguna untuk berinteraksi dengan bot WhatsApp kami melalui beberapa menu interaktif, termasuk:</p>
+    <ul>
+      <li><strong>TikTok:</strong> Masukkan link video TikTok untuk dikirim ke bot agar bisa diunduh tanpa watermark.</li>
+      <li><strong>Audio:</strong> Masukkan judul lagu, bot akan mengirimkan file audio dari lagu tersebut.</li>
+      <li><strong>Sticker:</strong> Masukkan kata-kata, bot akan mengubahnya menjadi stiker WhatsApp.</li>
+      <li><strong>Cuaca:</strong> Masukkan nama daerah, bot akan memberikan informasi cuaca saat ini.</li>
+    </ul>
+    <p>Cara penggunaan sangat mudah: pilih menu, masukkan informasi yang diminta, lalu klik <strong>Kirim ke Bot</strong>. Anda akan diarahkan ke WhatsApp untuk mengirim perintah langsung ke bot.</p>
+    <p>Website ini dirancang untuk tampilan yang konsisten, responsif, dan mudah digunakan di semua perangkat. Nikmati pengalaman menggunakan bot tanpa harus mengetik perintah manual di WhatsApp!</p>
+
+    <!-- Kontak WhatsApp Pembuat -->
+    <div class="contact-section">
+      <p>Hubungi Developer:</p>
+      <a href="https://wa.me/6285774979608" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp 
+      </a>
+    </div>
+  </div>
+
+  <div class="spacer-bottom"></div>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a class="bn-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a class="bn-item" href="tiktok.html"><i class="fa-brands fa-tiktok"></i><span>TIKTOK</span></a>
+  <a class="bn-item" href="audio.html"><i class="fa-solid fa-music"></i><span>AUDIO</span></a>
+  <a class="bn-item active" href="about.html"><i class="fa-solid fa-circle-info"></i><span>ABOUT</span></a>
+</nav>
+
+<script>
+// Drawer
+const btnMenu = document.getElementById('btnMenu');
+const drawer = document.getElementById('drawer');
+const scrim = document.getElementById('scrim');
+btnMenu.addEventListener('click', ()=>{
+  drawer.classList.add('open');
+  scrim.classList.add('show');
+});
+scrim.addEventListener('click', ()=>{
+  drawer.classList.remove('open');
+  scrim.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
